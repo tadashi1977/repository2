@@ -1,0 +1,60 @@
+.width {
+  width: 100%;
+}
+
+p {
+  text-align: left;
+  text-indent: 30px;
+}
+
+header {
+  background-color: lightblue;
+  margin: 20px;
+  padding: 20px;
+}
+
+footer {
+  background-color: lightblue;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* TOOLTIP */
+
+.tip {
+  position: relative;
+}
+
+.tip:before {
+  /* initially hide */
+  visibility: hidden;
+  
+  /* add a delay to any changes to the visibility property */
+  transition-property: visibility;
+  transition-delay: 0.2s;
+  
+  /* get the text to display in the tooltip */
+  content: attr(aria-label);
+
+  /* add some styling */
+  padding: 2px 8px;
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+  white-space: nowrap;
+    font-family: sans-serif;
+
+  /* position it below the parent element */
+  position: absolute;
+  bottom: 100%;
+  
+  /* center it horizontally below the parent element */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* show tooltip on hover and when it receives focus */
+.tip:hover:before,
+.tip:focus:before{
+    visibility: visible
+}
