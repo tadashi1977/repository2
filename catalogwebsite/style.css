@@ -1,0 +1,18 @@
+
+body {
+    background-color: rgb(223, 175, 53);
+}
+
+nav {
+    background-color: lightblue;
+}
+
+main {
+    background-image: url("assets/clouds.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    background-color: lightgreen;
+}
