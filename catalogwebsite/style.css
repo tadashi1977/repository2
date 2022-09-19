@@ -1,16 +1,23 @@
-
+* {
+    padding: 10px;
+}
 body {
-    background-color: rgb(223, 175, 53);
+    background-image: url("assets/clouds.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
     background-color: lightblue;
 }
 
-main {
-    background-image: url("assets/clouds.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+figure {
+    padding: 0px;
+}
+
+figcaption {
+    font-size: 10px;
+    padding: 0px;
 }
 
 footer {
