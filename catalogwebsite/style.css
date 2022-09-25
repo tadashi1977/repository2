@@ -2,13 +2,18 @@
     padding: 10px;
 }
 body {
-    background-image: url("assets/clouds.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #C75A24;
 }
 
 nav {
-    background-color: lightblue;
+    background-color: #FBA478;
+}
+
+main {
+    background-color: #7A503B;
+    margin-top: 30px;
 }
 
 figure {
@@ -21,5 +26,5 @@ figcaption {
 }
 
 footer {
-    background-color: lightgreen;
+    background-color: #E38024;
 }
