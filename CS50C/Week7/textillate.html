@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Textillate</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="source/animate.css">
+        <script src="source/jquery.fittext.js"></script>
+        <script src="source/jquery.lettering.js"></script>
+        <script src="source/jquery.textillate.js"></script>
+
+    </head>
+    <body>
+        <h1 class="myText" data-in-effect="rollIn" data-out-effect="hinge">jQuery textillate is a new method plugin </h1>
+        <button onclick="doTheOut()">Out!</button>
+
+        <script>
+            $('.myText').textillate();
+
+            function doTheOut(){
+                $('.myText').textillate('out');
+            }
+        </script>
+    </body>
+</html>

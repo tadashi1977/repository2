@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Knob</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="source/jquery.knob.min.js"></script>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="mynumber" class="dial" data-min="-50" data-max="50" value="0">
+        </form>
+
+        <script>
+            $(".dial").knob();
+        </script>
+    </body>
+</html>

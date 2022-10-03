@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Week 6: jQuery UI</title>
+
+    <!--STEP 1. Load jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!--STEP 2. Load jQuery UI javascript file -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <!--STEP 3. Load jQuery UI theme css file -->
+    <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>JQuery and jQuery UI</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+      </ul>
+      <div id="tabs-1">
+        <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+      </div>
+      <div id="tabs-2">
+        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+      </div>
+      <div id="tabs-3">
+        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+        <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+      </div>
+    </div>
+
+    <div id="p1"></div>
+
+    <h2 id="drag1">Draggable</h2>
+    <h2 id="drop1">Droppable</h2>
+    <h3 id="drag2">Draggable 2</h3>
+    
+    <script>
+
+      $('#drag1,#drag2').draggable();
+
+      $('#drop1').droppable(
+        {
+          drop: function(ev) {
+            console.log(ev.originalEvent.target);
+          }
+        }
+      )
+
+      $('#tabs').tabs();
+
+      $('#p1').progressbar(
+        {
+          value: 3,
+          max: 10
+        }
+      )
+
+      $('#tabs>ul>li').click(
+        function(){
+          let pval = $( "#p1" ).progressbar( "option", "value" );
+          console.log(pval);
+          pval = pval + 2.5;
+          if (pval > 10) {
+            pval = 10;
+          }
+          $( "#p1" ).progressbar( "option", "value", pval );
+        }
+      )
+    </script>
+  </body>
+</html>
