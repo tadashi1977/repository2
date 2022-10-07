@@ -1,0 +1,47 @@
+* {
+    background-color: slategray;
+}
+
+h1, h2, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#container {
+    font-family:'Courier New', Courier, monospace;
+}
+
+#tabs {
+    font-family:'Courier New', Courier, monospace;
+}
+
+#story {
+    font-family:'papyrus';
+}
+
+.ssg a {
+    color:aliceblue;
+    font-family: 'papyrus';
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+a {
+    color:aliceblue;
+}
+
+header {
+    background-color:darkcyan;
+    padding: 20px;
+}
+
+footer {
+    background-color:darkcyan;
+    padding: 10px;
+    margin: 20px;
+}
+
+footer h3 {
+    background-color: darkcyan;
+    margin: 5px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Swipebox</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="swipebox/swipebox.min.css">
+        <script src="swipebox/jquery.swipebox.min.js"></script>
+    </head>
+    <body>
+        <figure>
+            <a href="assets/Night Fire.jpg" class="myswipebox" title="Night Fire">
+                <img src="assets/River.jpg" alt="image">
+                </a>
+        </figure>
+        <figure>
+            <a href="assets/Rock and Sea.jpg" class="myswipebox" title="Rock and Sea">
+                <img src="assets/Wedding Rock.jpg" alt="rock and sea">
+                </a>
+        </figure>
+
+        <script>
+            $( '.myswipebox' ).swipebox();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Week 7 Assignment: jQuery Plugin</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <!--Skeletabs Plugin-->
+        <link rel="stylesheet" href="skeletabs.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+        <!--New Plugin-->
+        <link rel="stylesheet" href="ssg.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+
+    <body>
+        <header>
+          <h1>Week 7: jQuery Plugins - Skeletabs and Story Show Gallery</h1>
+        </header>
+
+        <h2 id="tabs">Skeletabs</h2>
+        <p id="tabs"><a href="https://findawayer.github.io/skeletabs/#Introduction">Plugin Documentation</a></p>
+        <div id="container" class="skltbs-theme-dark skltbs use-drop"><!-- container -->
+          
+            <ul class="skltbs-tab-group"><!-- tabGroup -->
+              <li class="skltbs-tab-item"><!-- tabItem -->
+                <button class="skltbs-tab">Skeletabs</button><!-- tab -->
+              </li>
+              <li class="skltbs-tab-item">
+                <button class="skltbs-tab">Options</button>
+              </li>
+              <li class="skltbs-tab-item">
+                <button class="skltbs-tab">Methods</button>
+              </li>
+              <li class="skltbs-tab-item">
+                <button class="skltbs-tab">Events</button>
+              </li>
+              <li class="skltbs-tab-item">
+                <button class="skltbs-tab">Themes</button>
+              </li>
+              <li class="skltbs-tab-item">
+                <button class="skltbs-tab">Transition Effects</button>
+              </li>              
+            </ul>
+            <div class="skltbs-panel-group"><!-- panelGroup -->
+              <div class="skltbs-panel">Skeletabs is an open source jQuery plugin that provides tabbed browsing feature to your web contents. It is focused on accessibility and scalability above all else, and is designed to support convenience of screen readers and keyboard users, as well as to encourage developers' creative uses. </div><!-- panel -->
+
+              <div class="skltbs-panel">A list of default options may include autoplay, breakpoint, history, keyboard, select event, etc.  These can be found at <a href="https://findawayer.github.io/skeletabs/#Options"> the doc page.</a></div>
+
+              <div class="skltbs-panel">Skeletabs dispose some very useful methods.  Here is a list of all the <a href="https://findawayer.github.io/skeletabs/#Methods">methods</a></div>
+
+              <div class="skltbs-panel">You can bind custom callbacks using jQuery events that the plugin dispatches. All events are prefixed by skeletabs:, and triggered onto the container element. </div>
+
+              <div class="skltbs-panel">skeletabs.css file has 2 default themes included. Adding a className starting with skltbs-theme- to the container element will apply relevant theme.
+              </div>
+
+              <div class="skltbs-panel">skeletabs.css file has 4 different types of default animation bundled in. Adding a className starting use- to the container element will apply the relevant effect. </div>
+            </div>
+          </div>
+          
+          <h2 id="story">Story Show Gallery</h2>
+          <p id="story"><a href="https://github.com/Roman-Flossler/Story-Show-Gallery">Plugin Documentation on GitHub</a></p>
+          <div class='ssg fs'>
+            <a href='assets/Night Fire.jpg'> <img alt='Night Fire - Willow Creek, CA' src='assets/River BW_800p.jpg' width="500px">NIGHT FIRE</a>
+            <a href='assets/River.jpg' data-author='photo by JTS'> TRINITY RIVER</a> </button>
+            <a href='assets/younghawk.jpg'>HAWK</a>
+            <a href='assets/Wedding Rock.jpg'>WEDDING ROCK</a> <!-- an empty link, no caption -->
+          
+            <a href='assets/Redwood Tree.jpg' class='nossg'> REDWOOD TREE </a>
+          </div>
+        </div>
+
+        <footer>
+          <h3>Jason Serikawa</h3>
+          <h3>CS50C</h3>
+          <h3>All photos by Jason Serikawa</h3>
+        </footer>
+
+        
+        <!--SCRIPTS-->
+
+        <script src="skeletabs.js"></script>
+
+        <script>
+            $('#container').skeletabs();
+        </script>
+
+        <script src="ssg.min.js"></script>
+        <script>
+          SSG.cfg.theme= 'dark';  // visual theme
+          SSG.cfg.watermarkText = 'Jason Serikawa';  // watermark text overlaying a photo
+          SSG.cfg.watermarkFontSize = 18;
+          SSG.cfg.captionExif = 'trim'; // show EXIF with reduced lens info
+        </script>
+
+    </body>
+</html>
