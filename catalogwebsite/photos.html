@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content ="width=device-width">
+    <title>Catalog</title>
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <img src="assets/logoGray.png" alt="logo" width="150">
+    </header>
+  
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Plants</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="plantList.html">Plant List</a></li>
+            <li><a class="dropdown-item" href="fruit.html">Fruit Trees</a></li>
+            <li><a class="dropdown-item" href="veg.html">Vegetables</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="grow.html">Farming Techniques</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="photos.html">Photos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="container-fluid">
+        <h1 style="text-align:center">Photo Gallery</h1>
+      <div class="row">
+        <div class="col">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/broccoli.jpg" class="d-block w-100" alt="broccoli">
+                    <figcaption>Broccoli Florets by Sanjay Acharya licenced CC BY-SA 3.0</figcaption>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/cabbage.jpg" class="d-block w-100" alt="cabbage">
+                    <figcaption>Cabbage by Kondah licenced CC BY-SA 4.0</figcaption>
+            
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/carrots.jpg" class="d-block w-100" alt="carrots">
+                    <figcaption>Wild Carrot by Christian Fischer licenced CC BY-SA 3.0</figcaption>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/cherrytree.jpg" class="d-block w-100" alt="cherry tree">
+                    <figcaption>Cherry Tree by Silverije licenced CC BY-SA 4.0</figcaption>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/peachtree.jpg" class="d-block w-100" alt="peach tree">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/corn.jpg" class="d-block w-100" alt="corn">
+                    <figcaption>Corn Blooming by Wilfredor licenced CC0</figcaption>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+          
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="float-end">
+        <img src="assets/logo2.jpeg" alt="logo" width="150">
+      </div>
+      <p>The Natural Organic Farm</p>
+      <p>12345 Farm Lane</p>
+      <p>Willow Creek, CA 95573</p>
+      <p></p>
+    </footer>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>

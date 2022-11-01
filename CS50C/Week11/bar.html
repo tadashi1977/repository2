@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bar Chart JSON</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            function loadJSON() {
+                $.getJSON("data.json",
+                    function(dataReturned) {
+                        doBar( dataReturned );
+                    }
+                );
+            }
+
+            function doBar(data) {
+                var canvas1 = document.getElementById('chart1');
+                var context1 = canvas1.getContext('2d');
+
+                var startX = canvas1.width;
+                var bottomY = canvas1.height;
+                var maxVal = getMax(data);
+                var scaleY = bottomY / maxVal;
+                var scaleX = startX / (data.length);
+                var i, height, lastX = 0;
+
+                for (i=0; i<=maxVal; i = i + maxVal / 10) {
+                    context1.beginPath();
+                    context1.moveTo(0, i *scaleY);
+                    context1.lineTo(startX, i * scaleY);
+                    context1.strokeStyle="red";
+                    context1.stroke();
+
+                    context1.fillStyle = "black";
+                    context1.font = "bold 24px Arial";
+                    context1.fillText(maxVal - i, 0, (i*scaleY)-2);
+                }
+
+                for ( i=0; i < data.length; i++) {
+                    context1.fillStyle = data[i].color;
+                    context1.globalAlpha = 0.7;
+                    height = data[i].val * scaleY;
+                    context1.fillRect( lastX, bottomY - height, scaleX, height );
+                    lastX += scaleX;
+                }
+            }
+
+            function getMax(data) {
+                var max = 0;
+                for (var i =0; i < data.length; i++) {
+                    if ( data[i].val >max ) {
+                        max = data[i].val;
+                    }
+                }
+                return max;
+            }
+
+
+        </script>
+    </head>
+    <body onload="loadJSON();">
+        <canvas id="chart1" width ="500" height="500"></canvas>
+    </body>
+</html>

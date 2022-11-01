@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pie Chart</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <style>
+            body {background-color: grey;}
+        </style>
+    </head>
+        <script>
+
+            function loadJSON() {
+                $.getJSON("data.json",
+                    function(dataReturned) {
+                        doPie( dataReturned );
+                    }
+                );
+            }
+
+            function doPie(data){
+                // insert into html and set drawing context
+                var canvas1 = document.getElementById('chart1');
+                var context1 = canvas1.getContext ('2d');
+                
+                var centerX = canvas1.width / 2;
+                var centerY = canvas1.height / 2;
+                var radius = Math.min(canvas1.width, canvas1.height) / 2;
+                var lastPosition = 0, total = 0, i, pie, x, y;
+
+                // sum total of all the slices
+                for (i = 0; i < data.length; i++) {
+                    total += data[i].val;
+                }
+
+                for (i = 0; i < data.length; i++){
+                    context1.beginPath();
+                    context1.moveTo( centerX, centerY );
+                    pie = Math.PI * 2 * (data[i].val / total );
+                    context1.arc( centerX, centerY, radius, lastPosition, lastPosition + pie, false);
+                    context1.lineTo( centerX, centerY );
+                    context1.fillStyle = data[i].color;
+                    context1.fill();
+
+                    x = centerX + ( radius * .75) * Math.cos( lastPosition + ( pie/3.5) );
+                    y =centerY + (radius * .75) * Math.sin( lastPosition + ( pie / 4 ) );
+                    context1.fillStyle = "black";
+                    context1.font = "bold 15px Verdana";
+                    context1.fillText( data[i].name, x, y);
+                    context1.fillText( data[i].val, x-25, y+20);
+                    
+                    lastPosition += pie;
+                }
+            }
+        </script>
+    </head>
+    <body onload="loadJSON();">
+        <h1>The 10 Most Populous Countries in the World</h1>
+        <canvas id="chart1" width="1000" height="1000"></canvas>
+    </body>
+</html>

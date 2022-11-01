@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week 11: Canvas</title>
+</head>
+
+<body>
+
+    <canvas id="c1" width ="500" height="500"></canvas>
+
+    <script>
+        let c = document.getElementById("c1");
+
+        let winWidth = window.innerWidth;
+        let winHeight = window.innerHeight;
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+
+        var drawing = c.getContext('2d');
+        drawing.moveTo(0,0);
+        drawing.lineTo(winWidth/2, winHeight/2);
+        drawing.lineTo(winWidth/2, winHeight);
+        drawing.lineTo(0, winHeight);
+        drawing.lineTo(0,0);
+        drawing.lineWidth = 8;
+        drawing.strokeStyle = 'red';
+        drawing.stroke();
+
+        // text with fillText()
+        drawing.font = "36px Helvetica";
+        drawing.textAlign = 'center';
+        drawing.textBaseline = 'bottom';
+        drawing.fillStyle = 'rgba(0, 0, 255, 0.5)';
+        drawing.fillText('CS50C!',  winWidth/4, winHeight/2);
+
+        // filled rect with fillRect()
+        drawing.fillStyle = 'rgba(200,0,200,0.7)';
+        drawing.fillRect(winWidth/6,winHeight/6,winWidth/7, winHeight/7);
+
+        // stroked rect with strokeRect()
+        drawing.strokeStyle = 'rgba(0,255,0,0.7)';
+        drawing.strokeRect(winWidth/6 - 10, winHeight/6 + 10, winWidth/7, winHeight/7)
+
+        // circle with arc() together with fill()
+        /*drawing.fillStyle = 'blue';
+        drawing.beginPath();
+        drawing.arc(winWidth/3, winHeight/3, winHeight/6, 0 , 2 * Math.PI, false);
+        drawing.fill();
+        drawing.endPath();*/
+
+        drawing.strokeStyle = 'rgba(255,0.0.0.5)';
+        drawing.linewidth = 4;
+        drawing.beginPath();
+        drawing.arc(winWidth/3, winHeight/3, winHeight/6, 0 , Math.PI, true);
+        drawing.stroke();
+        drawing.endPath();
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

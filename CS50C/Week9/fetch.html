@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Fetch APA</title>
+    </head>
+    <body>
+        <h1>Week 9: fetch(), AJAX, JSON</h1>
+
+        <div id="cardtable">
+
+        </div>
+        <script>
+            fetch('cards.json')
+                .then(
+                    function(myresponse) {
+                        //console.log(myresponse);
+                        return myresponse.json();
+                        // console.log(j);
+                    }
+                )
+                .then(
+                    function(mydata) {
+                        console.log(mydata);
+
+                        for( let c=0; c < mydata.cards.length; c++) {
+                            document.getElementById('cardtable').innerHTML += "<li>" + mydata.cards[c].facevalue + " of " + mydata.cards[c].suit + "</li>";
+                        }
+                    }
+                );
+        </script>
+    </body>
+</html>

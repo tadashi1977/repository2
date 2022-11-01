@@ -1,0 +1,20 @@
+{
+    "cards": [
+        {
+            "suit": "Hearts",
+            "facevalue": "A"
+        },
+        {
+            "suit": "Spades",
+            "facevalue": "9"
+        },
+        {
+            "suit": "Diamonds",
+            "facevalue": "2"
+        },
+        {
+            "suit": "Clubs",
+            "facevalue": "Q"
+        }
+    ]
+}

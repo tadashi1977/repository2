@@ -1,0 +1,61 @@
+[
+        {
+            "title": "Waimanu Valley",
+            "lat": 20.1461502,
+            "lng": -155.6544541,
+            "description":"Lush, scenic valley offering a paved road, hiking, waterfalls, kalo fields & a black sand beach."
+        },
+            {"title": "Mauna Kea",
+            "lat": 19.8215417,
+            "lng": -155.483051,
+            "description":"Towering, dormant volcano with a small lake & a 6-mile trail to the summit & its observatories."
+        },
+        {
+            "title": "Hapuna Beach",
+            "late": 19.992307,
+            "lng": -155.8256884,
+            "description":"Wide, sandy beach offering restrooms, picnic areas & lifeguards, popular with families & locals."
+        },
+        {
+            "title": "Mauna Loa",
+            "lat": 19.4721386,
+            "lng": -155.5922066,
+            "description":"Home to Mauna Loa Observatory, the world's largest active volcano is at 13,680 feet above sea level."
+        },
+        {
+            "title": "South Point",
+            "lat": 18.9149053,
+            "lng": -155.6957321,
+            "description":"This remote, wind-swept locale features rugged clifftops & sweeping coastal views."
+        },
+        {
+            "title": "Kaumana Caves",
+            "lat": 19.6869277,
+            "lng": -155.1477483,
+            "description":"Visitors to this tropical park can descend into a massive 1881 lava-tube cave formed by Mauna Loa."
+        },
+        {
+            "title": "Akaka Falls",
+            "lat": 19.853905,
+            "lng": -155.1543746,
+            "description":"Tropical rainforest park offering a .4-mile loop footpath leading up to a 442-foot scenic waterfall."
+        },
+        {
+            "title": "Pololu Valley",
+            "lat": 20.206944,
+            "lng": -155.7336111,
+            "description":"Scenic mountain valley offering lush vegetation, nature trails & an ocean beach with black sand."
+        },
+        {
+            "title": "Kilauea",
+            "lat": 19.406961,
+            "lng": -155.3510196,
+            "description":"Tropical rainforest park offering a .4-mile loop footpath leading up to a 442-foot scenic waterfall."
+        },
+        {
+            "title": "Kiholo Bay",
+            "lat": 19.8443238,
+            "lng": -155.9497395,
+            "description":"This remote, protected bay features a pebble beach & marine life, such as green sea turtles."
+        }
+    ]

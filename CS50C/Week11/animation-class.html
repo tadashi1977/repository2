@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS50C Week11 Live Canvas Example</title>
+        <style>
+          body {
+            margin:0;
+          }
+        </style>
+    </head>
+    <body>
+      <canvas id="c1" width="500" height="500"></canvas>
+
+      <script>
+        // find the canvas html element
+        let c = document.getElementById("c1");
+
+        // resize the width and height of the canvas element to fit the size of the browser window
+        let winWidth = window.innerWidth;
+        let winHeight = window.innerHeight;
+        c.width = winWidth;
+        c.height = winHeight;
+
+        // get the 2d drawing context for that canvas saved in c
+        const drawing = c.getContext('2d');
+        
+        // create some html image objects in javascript to hold our bitmap images from the files
+        const sun = new Image();
+        const moon = new Image();
+        const earth = new Image();
+
+        // load the bitmap from each file into one of the image objects in our vars
+        sun.src = 'assets/canvas_sun.png';
+        moon.src = 'assets/canvas_moon.png';
+        earth.src = 'assets/canvas_earth.png';
+
+        // have browser call our draw() every time it is ready to create another animation frame
+        window.requestAnimationFrame(draw);
+        
+        // store our code for drawing in a function so we have browser run the function
+        // over and over again each time it is ready to refresh frame of animation
+        function draw() {
+          drawing.globalCompositeOperation = 'destination-over';
+          drawing.clearRect(0, 0, 300, 300); // clear canvas
+
+          drawing.fillStyle = 'rgba(0, 0, 0, 0.4)';
+          drawing.strokeStyle = 'rgba(0, 153, 255, 0.4)';
+          drawing.save();
+          drawing.translate(150, 150);
+
+          // earth
+          const time = new Date();
+          console.log(time);
+          drawing.rotate(
+            ( (2 * Math.PI / 60) * time.getSeconds() ) 
+            + 
+            ( (2 * Math.PI / 60000) * time.getMilliseconds() )
+          );
+          drawing.translate(105, 0);
+          drawing.fillRect(0, -12, 40, 24); // shadow
+          drawing.drawImage(earth, -12, -12);
+
+          // moon
+          drawing.save();
+          drawing.rotate(
+            ( (2 * Math.PI / 6) * time.getSeconds() ) 
+            + 
+            ( (2 * Math.PI / 6000) * time.getMilliseconds() )
+          );
+          drawing.translate(0, 28.5);
+          drawing.drawImage(moon, -3.5, -3.5);
+          drawing.restore();
+
+          // orbit circle of earth 
+          drawing.restore();
+          drawing.beginPath();
+          drawing.arc(150, 150, 105, 0, Math.PI * 2, false);
+          drawing.stroke();
+
+          // sun
+          drawing.drawImage(sun, 0, 0, 300, 300);
+          
+          // tell browser after draw is at its end, to call draw at next animation frame
+          window.requestAnimationFrame(draw);
+        }
+      </script>
+    </body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content ="width=device-width">
     <title>Catalog</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <link href="style.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <nav>
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="home.html" style="background-color:lightgrey">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Plants</a>
@@ -28,42 +28,54 @@
             <li><a class="dropdown-item" href="fruit.html">Fruit Trees</a></li>
             <li><a class="dropdown-item" href="veg.html">Vegetables</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="about.html">About and Credits</a></li>
+            <li><a class="dropdown-item" href="grow.html">Farming Techniques</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="store.html">Store</a>
+          <a class="nav-link" href="photos.html">Photos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Grow Healthy Food</a>
+          <a class="nav-link" href="about.html">Contact</a>
         </li>
       </ul>
     </nav>
-    <main class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <h1><i class="bi bi-suit-heart"></i>Organic Farming</h1>
-          <p class="h1"></p>
-
-          <p>Organic farming also known as ecological farming or biological farming,[1][2][3][4][5] is an agricultural system that uses fertilizers of organic origin such as compost manure, green manure, and bone meal and places emphasis on techniques such as crop rotation and companion planting. It originated early in the 20th century in reaction to rapidly changing farming practices. Certified organic agriculture accounts for 70 million hectares (170 million acres) globally, with over half of that total in Australia.[6] Organic farming continues to be developed by various organizations today. Biological pest control, mixed cropping and the fostering of insect predators are encouraged. Organic standards are designed to allow the use of naturally-occurring substances while prohibiting or strictly limiting synthetic substances.[7] For instance, naturally-occurring pesticides such as pyrethrin are permitted, while synthetic fertilizers and pesticides are generally prohibited. Synthetic substances that are allowed include, for example, copper sulfate, elemental sulfur and Ivermectin. Genetically modified organisms, nanomaterials, human sewage sludge, plant growth regulators, hormones, and antibiotic use in livestock husbandry are prohibited.[8][9] Organic farming advocates claim advantages in sustainability,[10][11] openness, self-sufficiency, autonomy and independence,[11] health, food security, and food safety.</p>
-        </div>
-        <div class="col-md-3">
-          <h3>Permaculture</h3>
-          <p>Permaculture is an approach to land management and settlement design that adopts arrangements observed in flourishing natural ecosystems. It includes a set of design principles derived using whole-systems thinking. It applies these principles in fields such as regenerative agriculture, town planning, rewilding, and community resilience. Permaculture originally came from "permanent agriculture",[1] but was later adjusted to mean "permanent culture", incorporating social aspects. The term was coined in 1978 by Bill Mollison and David Holmgren, who formulated the concept in opposition to modern industrialized methods instead adopting a more traditional or "natural" approach to agriculture.[2][3][4]</p>
-        </div>
-        <div class="col-md-3">
-          <h3>Biodynamic Farming</h3>
-          <p>Biodynamic agriculture is a form of alternative agriculture based on pseudo-scientific and esoteric concepts initially developed in 1924 by Rudolf Steiner (1861–1925).[1][2] It was the first of the organic farming movements.[3] It treats soil fertility, plant growth, and livestock care as ecologically interrelated tasks,[4][5][6] emphasizing spiritual and mystical perspectives. Biodynamics has much in common with other organic approaches – it emphasizes the use of manures and composts and excludes the use of synthetic (artificial) fertilizers, pesticides and herbicides on soil and plants. Methods unique to the biodynamic approach include its treatment of animals, crops, and soil as a single system, an emphasis from its beginnings on local production and distribution systems, its use of traditional and development of new local breeds and varieties. Some methods use an astrological sowing and planting calendar.[7] Biodynamic agriculture uses various herbal and mineral additives for compost additives and field sprays; these are prepared using methods that are more akin to sympathetic magic than agronomy, such as burying ground quartz stuffed into the horn of a cow, which are said to harvest "cosmic forces in the soil".[8]</p>
-        </div>
-      </div>
-    
+    <main id="intro" style="background-image:url('assets/river.jpg');">
+          <h1>Welcome to the Natural Organic Farm</h1>
+          <h2>We grow the highest quality produce.</h2>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <h2>Explore our current collection of <a href="plantList.html">plants.</a></h2>
+          <p> </p>
+          <p> </p>
+          <h2>Learn about the <a href="grow.html">farming technologies</a> we use to grow.</h2>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <h2>Grown in the fertile earth, full sunlight, fresh air, and pristine waters of Northern California.</h2>
+          <p></p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+        
     </main>
 
     <footer>
-      <img src="assets/logo2.jpeg" alt="logo" width="150">
+      <div class="float-end">
+        <img src="assets/logo2.jpeg" alt="logo" width="150">
+      </div>
+      <p>The Natural Organic Farm</p>
+      <p>12345 Farm Lane</p>
+      <p>Willow Creek, CA 95573</p>
+      <p></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
   </body>

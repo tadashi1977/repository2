@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- need the viewport meta tag to support mobile browsers -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Using External JSON Data to Make Map Markers + Infowindows</title>
+        <!-- load the jQuery JavaScript library before using $ -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            /* we need to dimension/size the box holding our map */
+            #mymap {
+                width:100vw; /* use viewport units to dimension map */
+                height:90vh;
+            }
+            #controls {
+              width:100vw;
+              height:10vh;
+              background:lightseagreen;
+            }
+            body {
+              margin:0;
+            }
+            .brand {
+              color:white;
+              font-family:Impact,sans-serif;
+              font-size:20px;
+              display:inline-block;
+              padding:10px;
+            }
+            #controls a {
+              color:white;
+              text-decoration:none;
+              display:inline-block;
+              padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- this element is where our map will be drawn -->
+        <div id="mymap"></div>
+        <div id="controls">
+          <span class="brand">Hawaii</span>
+          <a href="#" id="menu1">The Big Island
+          </a>
+          <a href="#" id="menu2"></a>
+        </div>
+        <!-- this script element contains our custom code -->
+        <script>
+        /* global $, google */
+        
+
+        $('#menu1').click(
+          function() {
+            console.log(map1);
+            map1.setZoom(9);
+          }
+        );
+
+        $('#menu2').click(
+          function() {
+            alert("menu 2 clicked");
+            console.log(markers);
+          }
+        );
+
+        // declare the variables outside a function so they are global
+        var map1, markers;
+
+        function initMap() {
+            // inside this function we can write the code to load our json, then make a map
+            
+            // load external json data
+            $.getJSON( "hawaii.json",
+                function(jsonData) {
+                    // the code in this function is run by jQuery after JSON loads
+                    // now we can perform the steps in javascript to create the map
+                    
+                    // step 1. define the geocoord (lat,long) for the center first
+                    var geocoord1 = {
+                        lat: 19.8215417,
+                        lng: -155.483051
+                    };
+                    
+                    // step 2. create a google Map object
+                    map1 = new google.maps.Map(
+                        // tell gmap the html element to draw map inside of
+                        document.getElementById('mymap'),
+                        {
+                            // provide the center in latitude and longitude
+                            center: geocoord1,
+                            // set the zoom level for the map
+                            zoom: 7,
+                            styles:
+                            [
+                                {
+                                    "featureType": "all",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "invert_lightness": true
+                                        },
+                                        {
+                                            "saturation": "-9"
+                                        },
+                                        {
+                                            "lightness": "0"
+                                        },
+                                        {
+                                            "visibility": "simplified"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "landscape.man_made",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "weight": "1.00"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "weight": "0.49"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        },
+                                        {
+                                            "weight": "0.01"
+                                        },
+                                        {
+                                            "lightness": "-7"
+                                        },
+                                        {
+                                            "saturation": "-35"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "labels.text",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "labels.text.stroke",
+                                    "stylers": [
+                                        {
+                                            "visibility": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "labels.icon",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                }
+                            ]
+
+                        }
+                    );
+                    
+
+                    // make an empty array to fill up with markers
+                    markers = [];
+                    // loop thru all objects in loaded json array
+                    for ( var c=0; c < jsonData.length; c++ ) {
+                        // create a marker that is placed on the map
+                        var geocoord = {
+                            lat: jsonData[c].lat,
+                            lng: jsonData[c].lng
+                        };
+                        markers[c] = new google.maps.Marker(
+                            {
+                                // 1. the position of the marker geocoord
+                                position: geocoord,
+                                // 2. which google map js var to place marker inside
+                                map: map1,
+                                // 3. title to show when user points at marker
+                                title: jsonData[c].title,
+                                // 4. add our own custom property to marker to hold description
+                                custom_property: jsonData[c].description
+                            }
+                        );
+
+                         // step 4. define a click event on our marker to make + open iw
+                        markers[c].addListener(
+                            'click',
+                            function() {
+                                // make info window with content from this marker's custom property
+                                var info1 = new google.maps.InfoWindow(
+                                    { content: this.custom_property }
+                                );
+                                
+                                // tell the info window to open inside of our map
+                                // and center on this marker's geocoord
+                                info1.open(map1, this);
+                            }
+                        );
+                    }
+                }
+            );
+
+
+            infoWindow = new google.maps.InfoWindow();
+
+const locationButton = document.createElement("button");
+
+locationButton.textContent = "Pan to Current Location";
+locationButton.classList.add("custom-map-control-button");
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+locationButton.addEventListener("click", () => {
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Location found.");
+        infoWindow.open(map);
+        map.setCenter(pos);
+      },
+      () => {
+        handleLocationError(true, infoWindow, map.getCenter());
+      }
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+});
+
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+infoWindow.setPosition(pos);
+infoWindow.setContent(
+  browserHasGeolocation
+    ? "Error: The Geolocation service failed."
+    : "Error: Your browser doesn't support geolocation."
+);
+infoWindow.open(map);
+}
+
+window.initMap = initMap;
+
+
+
+        }
+
+        
+        </script>
+        <!-- load the Google Maps API -->
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6ewBR1jv7-nXE-AvRM07Q2hGvxdeqvVc&callback=initMap">
+        </script>
+    </body>
+</html>

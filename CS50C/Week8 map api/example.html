@@ -1,0 +1,73 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+        <title>Google Maps API Example</title>
+        <style>
+            /* we need to dimension/size the box holding our map */
+            #mymap {
+                width:100%;
+                height:300px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- this element is where our map will be drawn -->
+        <div id="mymap">
+            
+        </div>
+        <!-- we place our own custom code in a function called initMap
+             so that it matches the function name in the script element below -->
+        <script>
+            /* global google */
+            
+            function initMap() {
+                // inside this function we can write the code to make a map
+                
+                // now we can perform the steps in javascript to create the map
+                
+                // step 1. define the geocoord (lat,long) for the center first
+                var geocoord1 = {
+                    lat: 38.465098,
+                    lng: -122.7215907
+                };
+                
+                // step 2. create a google Map object
+                var map1 = new google.maps.Map(
+                    // tell gmap the html element to draw map inside of
+                    document.getElementById('mymap'),
+                    {
+                        // provide the center in latitude and longitude
+                        center: geocoord1,
+                        // set the zoom level for the map
+                        zoom: 13
+                    }
+                );
+                
+                // step 3. create a marker that is placed on the map
+                var geocoord2 = {
+                    lat: 37.465098,
+                    lng: -121.7215907
+                };
+                var marker1 = new google.maps.Marker(
+                    {
+                        // 1. the position of the marker geocoord
+                        position: geocoord2,
+                        // 2. which google map js var to place marker inside
+                        map: map1,
+                        // 3. title to show when user points at marker
+                        title: 'I am a marker!'
+                    }
+                );
+            }
+        </script>
+        <!-- the script element we place at the bottom of the body
+             contains two critically important details we need to be aware of:
+             1) our google map api key value goes after key=
+             2) the name of the javascript function that will be run to create our map
+                goes after callback=  -->
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6ewBR1jv7-nXE-AvRM07Q2hGvxdeqvVc&callback=initMap">
+            </script>
+    </body>
+</html>

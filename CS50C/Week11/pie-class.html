@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Visualization with Canvas: Pie Chart</title>
+        <script>
+            // set up data set for our pie chart
+            var data = [70,59,43,102,17,53];
+            var colors = ['red', 'blue', 'green', 'purple', 'orange', 'gray'];
+
+            function doPie() {
+                // get reference to html canvas element in js var
+                var canvas1 = document.getElementById('chart1');
+                // now get reference to drawing context inside canvas
+                var context1 = canvas1.getContext('2d');
+                
+                // now we can establish some useful values in js vars
+                var centerX = canvas1.width / 2;
+                var centerY = canvas1.height / 2;
+                var radius = Math.min(canvas1.width, canvas1.height) / 2;
+                var lastPosition = 0, total = 0, i, pie, x, y;
+
+                // sum all data values for a grand total, needed to calc % for each slice
+                for ( i = 0; i < data.length; i++ ) {
+                    total += data[i];
+                }
+                
+                // now draw each pie slice as an arc
+                for ( i = 0; i < data.length; i++ ) {
+                    // start drawing a path
+                    context1.beginPath();
+                    // move pen to the center of the canvas
+                    context1.moveTo( centerX, centerY );
+                    // calculate pie segment as 360 degrees times % of total
+                    pie = Math.PI * 2 * ( data[i] / total );
+                    // draw arc for pie segment as % of total
+                    context1.arc( centerX, centerY, radius, lastPosition, lastPosition + pie, false );
+                    // draw line back to center
+                    context1.lineTo( centerX, centerY );
+                    // set fill color to color value in array in same position as data element
+                    context1.fillStyle = colors[i];
+                    // fill in complete path now drawn
+                    context1.fill();
+                    
+                    // draw text label for segment at 75% of the circle radius in middle of slice
+                    x = centerX + ( radius * .75) * Math.cos( lastPosition + ( pie / 2 ) );
+                    y = centerY + ( radius * .75) * Math.sin( lastPosition + ( pie / 2 ) );
+                    context1.fillStyle = "white";
+                    context1.font = "bold 24px Arial";
+                    context1.fillText( data[i], x, y);
+                    
+                    // increment angle around circle
+                    lastPosition += pie;
+                }
+            }
+        </script>
+    </head>
+    <body onload="doPie();">
+        <canvas id="chart1" width="500" height="500"></canvas>
+    </body>
+</html>

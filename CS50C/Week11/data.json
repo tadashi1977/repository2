@@ -1,0 +1,103 @@
+ [
+    {
+      "Rank": 1,
+      "name": "China",
+      "val": 1425887337,
+      "pop2021": "1425893.4650",
+      "GrowthRate": "1.0000",
+      "area": 9706961,
+      "Density": "146.8933",
+      "color": "red"
+    },
+    {
+      "Rank": 2,
+      "name": "India",
+      "val": 1417173173,
+      "pop2021": "1407563.8420",
+      "GrowthRate": "1.0068",
+      "area": 3287590,
+      "Density": "431.0675",
+      "color": "yellow"
+    },
+    {
+      "Rank": 3,
+      "name": "United States",
+      "val": 338289857,
+      "pop2021": "336997.6240",
+      "GrowthRate": "1.0038",
+      "area": 9372610,
+      "Density": "36.0935",
+      "color": "blue"
+    },
+    {
+      "Rank": 4,
+      "name": "Indonesia",
+      "val": 275501339,
+      "pop2021": "273753.1910",
+      "GrowthRate": "1.0064",
+      "area": 1904569,
+      "Density": "144.6529",
+      "color": "green"
+    },
+    {
+      "Rank": 5,
+      "name": "Pakistan",
+      "val": 235824862,
+      "pop2021": "231402.1170",
+      "GrowthRate": "1.0191",
+      "area": 881912,
+      "Density": "267.4018",
+      "color": "pink"
+    },
+    {
+      "Rank": 6,
+      "name": "Nigeria",
+      "val": 218541212,
+      "pop2021": "213401.3230",
+      "GrowthRate": "1.0241",
+      "area": 923768,
+      "Density": "236.5759",
+      "color": "orange"
+    },
+    {
+      "Rank": 7,
+      "name": "Brazil",
+      "val": 215313498,
+      "pop2021": "214326.2230",
+      "GrowthRate": "1.0046",
+      "area": 8515767,
+      "Density": "25.2841",
+      "color": "purple"
+    },
+    {
+      "Rank": 8,
+      "name": "Bangladesh",
+      "val": 171186372,
+      "pop2021": "169356.2510",
+      "GrowthRate": "1.0108",
+      "area": 147570,
+      "Density": "1160.0350",
+      "color": "brown"
+    },
+    {
+      "Rank": 9,
+      "name": "Russia",
+      "val": 144713314,
+      "pop2021": "145102.7550",
+      "GrowthRate": "0.9973",
+      "area": 17098242,
+      "Density": "8.4636",
+      "color": "cyan"
+    },
+    {
+      "Rank": 10,
+      "name": "Mexico",
+      "val": 127504125,
+      "pop2021": "126705.1380",
+      "GrowthRate": "1.0063",
+      "area": 1964375,
+      "Density": "64.9082",
+      "color": "violet"
+    }
+   
+]

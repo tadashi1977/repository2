@@ -5,7 +5,7 @@
     <meta name="viewport" content ="width=device-width">
     <title>Catalog</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
@@ -25,24 +25,25 @@
             <li><a class="dropdown-item" href="fruit.html">Fruit Trees</a></li>
             <li><a class="dropdown-item" href="veg.html">Vegetables</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="about.html">About and Credits</a></li>
+            <li><a class="dropdown-item" href="grow.html">Farming Techniques</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="store.html">Store</a>
+          <a class="nav-link" href="photos.html">Photos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Grow Healthy Food</a>
+          <a class="nav-link" href="about.html">Contact</a>
         </li>
       </ul>
     </nav>
-    <main div class="container">
-      <h1>Crop Plants</h1>
 
+    <main>
+    <div class="container">
+      <h1>Crop Plants</h1>
       <div class="row">
         <div class="col-lg-6">
           <h2>Fruit Trees</h2>
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample1">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -79,61 +80,91 @@
                 </div>
               </div>
             </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Cherry Tree
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Cherries</strong> A cherry is the fruit of many plants of the genus Prunus, and is a fleshy drupe (stone fruit).
+
+                  Commercial cherries are obtained from cultivars of several species, such as the sweet Prunus avium and the sour Prunus cerasus. The name 'cherry' also refers to the cherry tree and its wood, and is sometimes applied to almonds and visually similar flowering trees in the genus Prunus, as in "ornamental cherry" or "cherry blossom". Wild cherry may refer to any of the cherry species growing outside cultivation, although Prunus avium is often referred to specifically by the name "wild cherry" in the British Isles.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="col-lg-6">
           <h2>Vegetables</h2>
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample2">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <h2 class="accordion-header" id="heading1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                   Broccoli
                 </button>
               </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <strong>Brassica oleracea</strong> Broccoli (Brassica oleracea var. italica) is an edible green plant in the cabbage family (family Brassicaceae, genus Brassica) whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea. Broccoli has large flower heads, usually dark green, arranged in a tree-like structure branching out from a thick stalk which is usually light green. The mass of flower heads is surrounded by leaves. Broccoli resembles cauliflower, which is a different but closely related cultivar group of the same Brassica species. 
                 </div>
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h2 class="accordion-header" id="heading2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                   Corn
                 </button>
               </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <strong>Zea mays</strong> Maize (/meɪz/ MAYZ; Zea mays subsp. mays, from Spanish: maíz after Taino: mahiz), also known as corn (North American and Australian English, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago.[1][2] The leafy stalk of the plant produces pollen inflorescences (or "tassels") and separate ovuliferous inflorescences called ears that when fertilized yield kernels or seeds, which are fruits.[3][4] 
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <h2 class="accordion-header" id="heading3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                   Kale
                 </button>
               </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <strong>Brassica oleracea</strong> Kale (/keɪl/), or leaf cabbage, belongs to a group of cabbage (Brassica oleracea) cultivars grown for their edible leaves, although some are used as ornamentals. Kale plants have green or purple leaves, and the central leaves do not form a head (as with headed cabbage). Kales are considered to be closer to wild cabbage than most of the many domesticated forms of Brassica oleracea.[1] 
                 </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  Cabbage
+                </button>
+              </h2>
+              <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Zea mays</strong> Maize (/meɪz/ MAYZ; Zea mays subsp. mays, from Spanish: maíz after Taino: mahiz), also known as corn (North American and Australian English, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago.[1][2] The leafy stalk of the plant produces pollen inflorescences (or "tassels") and separate ovuliferous inflorescences called ears that when fertilized yield kernels or seeds, which are fruits.[3][4] 
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      
-      </div>
 
+    </div>
     </main>
 
     <footer>
-      <img src="assets/logo2.jpeg" alt="logo" width="100px">
+      <div class="float-end">
+        <img src="assets/logo2.jpeg" alt="logo" width="150">
+      </div>
+      <p>The Natural Organic Farm</p>
+      <p>12345 Farm Lane</p>
+      <p>Willow Creek, CA 95573</p>
+      <p></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
   </body>
