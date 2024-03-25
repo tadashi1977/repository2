@@ -1,3 +1,3 @@
-# Web Development
+# Web Development Classes
 
-This repository is for current website development projects.
+Early class projects in web development using jQuery, Bootstrap, Wordpress, and javaScript.
